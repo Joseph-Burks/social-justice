@@ -3,34 +3,32 @@
 </headers>
 <body>
     <nav class="navbar navbar-dark bg-dark navbar-expand">
-        <a class="navbar-brand btn btn-dark">Social Justice</a>
-        <ul class="navbar-nav">
+        <a id='home' class="navbar-brand btn btn-dark">Social Justice</a>
+        <ul id='nav-ul' class="navbar-nav ml-auto">
             <li class="nav-item-active">
-                <a class="nav-link btn btn-dark">Leaderboard</a>
-            </li>
-            <li class="nav-item-active">
-                <a class="nav-link btn btn-dark">Sign Up</a>
-            </li>
-            <li class="nav-item-active">
-                <a class="nav-link btn btn-dark">Log In</a>
+                <a id='leaderboard' class="nav-link btn btn-dark">Leaderboard</a>
             </li>
         </ul>
     </nav>
     <div class='container'>
-        <div style="height: 50px;"></div>
+        <div style="height: 30px;"></div>
         <div class='row'>
             <div class='col text-center'>
                 <h1>Social Justice</h1>
             </div>
         </div>
         <div style="height: 10px;"></div>
-        <div class='row'>
-            <div id='changing-container' class='col text-center'>
-                
-            </div>
+        <div class='row' id='changing-container'>
+            <!-- javascript changes based on user -->
         </div>
     </div>
+    
 
     <script src = "scripts/index.js" ></script>
     <script src = "scripts/userAttacker.js" ></script>
+    <script src = "scripts/leaderboard.js" ></script>
+    <script src = "scripts/login.js" ></script>
+    <script src = "scripts/signUp.js" ></script>
+    <script src = "scripts/userHome.js" ></script>
+    <script src = "scripts/helpers.js" ></script>
 </body>
