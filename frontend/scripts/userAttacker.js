@@ -5,22 +5,22 @@
 
 
 const displayGame = function(user) {
+    document.body.style.background = "url('gamesfx/img/background-blue.png')"
     const window = document.querySelector("#changing-container")
     window.innerHTML = ''
 
 
-  
 
     const userAttacker = document.createElement("img")
 
     userAttacker.style.width = "100px"
     userAttacker.style.position = "absolute"
     userAttacker.style.left = "450px"
-    userAttacker.style.top = "400px"
+    userAttacker.style.top = "600px"
 
+    // "https://publicdomainvectors.org/photos/Rocket11.png"
     
-    
-    userAttacker.src = "https://publicdomainvectors.org/photos/Rocket11.png"
+    userAttacker.src = "gamesfx/img/player-blue-1.png"
 
     userAttacker.setAttribute("class","user-attacker")
     
@@ -59,9 +59,9 @@ const displayGame = function(user) {
         let laser = document.createElement("img")
         laser.src = "gamesfx/img/laser-blue-1.png"
         laser.style.position = "absolute"
-        laser.style.width = '15px' 
+        laser.style.width = '10px' 
         laser.style.left = `${parseInt(userAttacker.style.left) + parseInt(userAttacker.style.width)/2 - parseInt(laser.style.width)/2}px`
-        laser.style.top = '400px'
+        laser.style.top = '600px'
     
 
         laser.setAttribute("class", "laser")
@@ -86,5 +86,5 @@ const displayGame = function(user) {
 
     }
 
-    
+
 }
