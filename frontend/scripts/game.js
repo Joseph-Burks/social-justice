@@ -4,5 +4,6 @@ const displayGame = (user) => {
     window.innerHTML = ''
 
     displayUserAttacker()
+    displayEnemy()
     
 }
