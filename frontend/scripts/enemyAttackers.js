@@ -1,4 +1,6 @@
-
+const displayEnemy = () => {
+    const window = document.querySelector("#changing-container")
+    
     const enemyGridContainerDiv = document.createElement("div")
     enemyGridContainerDiv.setAttribute("class", "enemy-grid-container")
     enemyGridContainerDiv.style.display = "grid"
@@ -81,3 +83,4 @@
     facebookEnemy.src = "gamesfx/img/social-media-icons/facebook-icon-64.png"
 
     enemyDivFaceBook.append(facebookEnemy)
+}
