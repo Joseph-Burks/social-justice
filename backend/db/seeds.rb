@@ -1,4 +1,6 @@
 joe = User.create({username: 'jobu234', password: '13615j'})
+mubarak = User.create({username: 'dripgod', password: 'mubarak'})
+
 
 Game.create({user: joe, score: 100, time: 56})
 Game.create({user: joe, score: 10, time: 12})
