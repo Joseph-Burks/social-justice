@@ -1,7 +1,7 @@
 const displayUserAttacker = function() {
     const window = document.querySelector("#changing-container")
     window.innerHTML = ''
-    
+  
     const userAttacker = document.createElement("img")
     userAttacker.style.width = "50px"
     userAttacker.style.position = "absolute"
