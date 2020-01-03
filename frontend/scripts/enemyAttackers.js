@@ -1,6 +1,5 @@
 const displayEnemy = () => {
-    const window = document.querySelector("#changing-container")
-    
+
     const enemyGridContainerDiv = document.createElement("div")
     enemyGridContainerDiv.setAttribute("class", "enemy-grid-container")
     enemyGridContainerDiv.style.display = "grid"
@@ -8,20 +7,16 @@ const displayEnemy = () => {
     enemyGridContainerDiv.style.gridColumnGap = "60px"
     enemyGridContainerDiv.style.top = "100px"
 
-    window.append(enemyGridContainerDiv)
+    changingContainer.append(enemyGridContainerDiv)
 
-    const enemyDivSnapchat = document.createElement("div")
-    enemyDivSnapchat.setAttribute("class", "snapchat-div")
-    
-    // enemyDivSpapchat.style.display = "grid-item"
+    // const enemyDivSnapchat = document.createElement("div")
+    // enemyDivSnapchat.setAttribute("class", "snapchat-div")
 
-    enemyGridContainerDiv.append(enemyDivSnapchat)
+    // enemyGridContainerDiv.append(enemyDivSnapchat)
     
     const snapchatEnemy = document.createElement("img")
     snapchatEnemy.src = "gamesfx/img/social-media-icons/snapchat-icon-64.png"
-    // snapchatEnemy.setAtrribute("class", "snapchat")
-
-    enemyDivSnapchat.append(snapchatEnemy)
+    changingContainer.append(snapchatEnemy)
 
 
 
