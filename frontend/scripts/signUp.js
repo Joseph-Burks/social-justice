@@ -1,8 +1,8 @@
 const displaySignUp = () => {
-    const window = document.getElementById('changing-container')
-    window.innerHTML = ''
-    let windowCol = document.createElement('div')
-    windowCol.setAttribute('class', 'col text-center')
+    changingContainer.innerHTML = ''
+
+    let changingContainerCol = document.createElement('div')
+    changingContainerCol.setAttribute('class', 'col text-center')
 
     let bigSpacerDiv = document.createElement('div')
     bigSpacerDiv.setAttribute('style', 'height: 30px;')
@@ -38,9 +38,9 @@ const displaySignUp = () => {
     signUpForm.append(spacerDivTwo)
     signUpForm.append(signUpButtonDiv)
 
-    windowCol.append(bigSpacerDiv)
-    windowCol.append(signUpForm)
-    window.append(windowCol)
+    changingContainerCol.append(bigSpacerDiv)
+    changingContainerCol.append(signUpForm)
+    changingContainer.append(changingContainerCol)
 
     signUpButton.addEventListener('click', () => {
         fetch('http://localhost:3000/users', {
@@ -53,6 +53,9 @@ const displaySignUp = () => {
                 password: `${passwordInput.value}`
             })
         }).then((res) => res.json())
-        .then((res) => displayUserHome(res))
+        .then((res) => {
+            document.body.style.background = "white"
+            displayUserHome(res)
+        })
     })
 }

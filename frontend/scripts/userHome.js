@@ -1,6 +1,5 @@
 const displayUserHome = (user) => {
-    const window = document.getElementById('changing-container')
-    window.innerHTML = ''
+    changingContainer.innerHTML = ''
 
     let leftSideCol = document.createElement('div')
     leftSideCol.setAttribute('class', 'col')
@@ -35,8 +34,8 @@ const displayUserHome = (user) => {
         rightSideCol.append(recentGames)
     }
 
-    window.append(leftSideCol)
-    window.append(rightSideCol)
+    changingContainer.append(leftSideCol)
+    changingContainer.append(rightSideCol)
 
     startNewGameButton.addEventListener('click', () => displayGame(user))
 }

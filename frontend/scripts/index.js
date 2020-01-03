@@ -1,3 +1,5 @@
+const changingContainer = document.getElementById("changing-container")
+
 document.addEventListener('DOMContentLoaded', () => {
 
     let leaderboard = document.getElementById('leaderboard')

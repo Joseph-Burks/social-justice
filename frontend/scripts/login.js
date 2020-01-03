@@ -1,8 +1,8 @@
 const displayLogin = () => {
-    const window = document.getElementById('changing-container')
-    window.innerHTML = ''
-    let windowCol = document.createElement('div')
-    windowCol.setAttribute('class', 'col text-center')
+    changingContainer.innerHTML = ''
+
+    let changingContainerCol = document.createElement('div')
+    changingContainerCol.setAttribute('class', 'col text-center')
 
     let bigSpacerDiv = document.createElement('div')
     bigSpacerDiv.setAttribute('style', 'height: 30px;')
@@ -53,12 +53,12 @@ const displayLogin = () => {
     dontHaveAnAccountDiv.append(message)
     dontHaveAnAccountDiv.append(signUpButton)
 
-    windowCol.append(bigSpacerDiv)
-    windowCol.append(loginForm)
-    windowCol.append(bigSpacerDivTwo)
-    windowCol.append(dontHaveAnAccountDiv)
+    changingContainerCol.append(bigSpacerDiv)
+    changingContainerCol.append(loginForm)
+    changingContainerCol.append(bigSpacerDivTwo)
+    changingContainerCol.append(dontHaveAnAccountDiv)
 
-    window.append(windowCol)
+    changingContainer.append(changingContainerCol)
 
     loginButton.addEventListener('click', () => {
         fetch(`http://localhost:3000/users/login/${usernameInput.value}`)
@@ -72,7 +72,10 @@ const displayLogin = () => {
 
                 let home = document.getElementById('home')
                 home.innerText = 'Dashboard'
-                home.addEventListener('click', () => displayUserHome)
+                home.addEventListener('click', () => {
+                    document.body.style.background = "white"
+                    displayUserHome(res)
+                })
 
                 let navUl = document.getElementById('nav-ul')
                 let navLi = document.createElement('li')
@@ -87,6 +90,7 @@ const displayLogin = () => {
 
                 navLi.addEventListener('click', () => {
                     navLi.remove()
+                    document.body.style.background = "white"
                     displayLogin()
                 })
                 }
