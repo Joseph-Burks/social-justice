@@ -3,7 +3,7 @@ const displayUserAttacker = function() {
     window.innerHTML = ''
   
     const userAttacker = document.createElement("img")
-    userAttacker.style.width = "50px"
+    userAttacker.style.width = "100px"
     userAttacker.style.position = "absolute"
     userAttacker.style.left = "700px"
     userAttacker.style.top = "740px"
@@ -32,12 +32,18 @@ const displayUserAttacker = function() {
 
     }, true)
 
-    document.addEventListener("keyup",function(e){
-        
-        if (e.code === "Space") {
-        createLaser()
-
-        }  
+    let hasFired = false
+    document.addEventListener("keydown",function(e){
+        e.preventDefault();
+        if (!hasFired){
+            if(e.keyCode == 32 && e.target == document.body) {
+                createLaser()
+                hasFired = true
+                setTimeout(()=>{
+                    hasFired = false
+                },200)
+              }
+        }
     })
 
     const createLaser = function() {
@@ -63,4 +69,4 @@ const displayUserAttacker = function() {
             laser.remove()
         },800)
     }
-}
+ }

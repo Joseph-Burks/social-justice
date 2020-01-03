@@ -1,86 +1,45 @@
 const displayEnemy = () => {
     const window = document.querySelector("#changing-container")
+
+
+    const createEnemy = function(left, top, src) {
+        const enemyUpdateDistance = 3
+        const howOftenWeUpdateEnemyPosition = 12
+        const timeThatEnemiesAreOnScreen = 6000
+
+    const enemy = document.createElement("img")
     
-    const enemyGridContainerDiv = document.createElement("div")
-    enemyGridContainerDiv.setAttribute("class", "enemy-grid-container")
-    enemyGridContainerDiv.style.display = "grid"
-    enemyGridContainerDiv.style.gridTemplateColumns = "auto auto auto auto auto auto"
-    enemyGridContainerDiv.style.gridColumnGap = "60px"
-    enemyGridContainerDiv.style.top = "100px"
-
-    window.append(enemyGridContainerDiv)
-
-    const enemyDivSnapchat = document.createElement("div")
-    enemyDivSnapchat.setAttribute("class", "snapchat-div")
+    enemy.style.position = "absolute"
+    enemy.style.left = `${left}px`
+    enemy.style.top = `${top}px`
+    enemy.src = src
     
-    // enemyDivSpapchat.style.display = "grid-item"
-
-    enemyGridContainerDiv.append(enemyDivSnapchat)
+    // enemy.setAtrribute("class", "enemies")
     
-    const snapchatEnemy = document.createElement("img")
-    snapchatEnemy.src = "gamesfx/img/social-media-icons/snapchat-icon-64.png"
-    // snapchatEnemy.setAtrribute("class", "snapchat")
+    window.append(enemy)
 
-    enemyDivSnapchat.append(snapchatEnemy)
-
-
-
-    const enemyDivInstagram =  document.createElement("div")
-    enemyDivInstagram.setAttribute("class", "instagram-div")
-
-    enemyGridContainerDiv.append(enemyDivInstagram)
-
-    const instagramEnemy = document.createElement("img")
-    instagramEnemy.src = "gamesfx/img/social-media-icons/instagram-icon-64.png"
-
-    enemyDivInstagram.append(instagramEnemy)
+    const moveEnemy = function() {
+        let top = parseInt(enemy.style.top) + enemyUpdateDistance
+        enemy.style.top = `${top}px`
+    }
 
 
+       let enemyInterval = setInterval(moveEnemy, howOftenWeUpdateEnemyPosition)
+       setTimeout(()=>{
+           clearInterval(enemyInterval)
+           enemy.remove()
+       },timeThatEnemiesAreOnScreen)
+
+}
 
 
-    const enemyDivTwitter =  document.createElement("div")
-    enemyDivTwitter.setAttribute("class", "twitter-div")
-
-    enemyGridContainerDiv.append(enemyDivTwitter)
-
-    const twitterEnemy = document.createElement("img")
-    twitterEnemy.src = "gamesfx/img/social-media-icons/twitter-icon-64.png"
-
-    enemyDivTwitter.append(twitterEnemy)
-
-
-
-    const enemyDivMySpace =  document.createElement("div")
-    enemyDivMySpace.setAttribute("class", "myspace-div")
-
-    enemyGridContainerDiv.append(enemyDivMySpace)
-
-    const myspaceEnemy = document.createElement("img")
-    myspaceEnemy.src = "gamesfx/img/social-media-icons/myspace-icon-64.png"
-
-    enemyDivMySpace.append(myspaceEnemy)
-
-
-
-    const enemyDivYoutube =  document.createElement("div")
-    enemyDivYoutube.setAttribute("class", "myspace-div")
-
-    enemyGridContainerDiv.append(enemyDivYoutube)
-
-    const youtubeEnemy = document.createElement("img")
-    youtubeEnemy.src = "gamesfx/img/social-media-icons/youtube-icon-64.png"
-
-    enemyDivYoutube.append(youtubeEnemy)
-
-
-
-    const enemyDivFaceBook =  document.createElement("div")
-    enemyDivFaceBook.setAttribute("class", "myspace-div")
-
-    enemyGridContainerDiv.append(enemyDivFaceBook)
-
-    const facebookEnemy = document.createElement("img")
-    facebookEnemy.src = "gamesfx/img/social-media-icons/facebook-icon-64.png"
-
-    enemyDivFaceBook.append(facebookEnemy)
+const timeBetweenEnemySpawns = 3000
+    setInterval(()=>{
+        createEnemy(100, -50, "gamesfx/img/social-media-icons/snapchat-icon-64.png")
+        createEnemy(250, -15, "gamesfx/img/social-media-icons/instagram-icon-64.png")
+        createEnemy(450, -150, "gamesfx/img/social-media-icons/twitter-icon-64.png")
+        createEnemy(600, -200, "gamesfx/img/social-media-icons/myspace-icon-64.png")
+        createEnemy(850, -400, "gamesfx/img/social-media-icons/youtube-icon-64.png")
+        createEnemy(1000, -350, "gamesfx/img/social-media-icons/facebook-icon-64.png")
+    }, timeBetweenEnemySpawns)
 }
