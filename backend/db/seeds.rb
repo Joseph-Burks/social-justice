@@ -1,3 +1,6 @@
+User.destroy_all
+Game.destroy_all
+
 joe = User.create({username: 'jobu234', password: '13615j'})
 mubarak = User.create({username: 'dripgod', password: 'mubarak'})
 
