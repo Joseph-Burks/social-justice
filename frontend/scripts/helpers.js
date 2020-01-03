@@ -100,3 +100,57 @@ const topTenGames = (games) => {
     }
     return topTenScores
 }
+
+const createTimer = () => {
+    let timer = document.createElement('button')
+    timer.setAttribute('class', 'btn-lg btn-outline-secondary')
+    timer.setAttribute('id', 'timer')
+    timer.setAttribute('disabled', true)
+    let time = 0
+    timer.innerText = `Time: 0s`
+    changingContainer.append(timer)
+}
+const createScoreboard = () => {
+    let scoreboard = document.createElement('button')
+    scoreboard.setAttribute('class', 'btn-lg btn-outline-secondary ml-auto')
+    scoreboard.setAttribute('id', 'scoreboard')
+    scoreboard.setAttribute('disabled', true)
+    scoreboard.innerText = `Score: 0`
+    changingContainer.append(scoreboard)
+}
+
+const updateScoreboard = (score, points) => {
+    let scoreboard = document.getElementById('scoreboard')
+    scoreboard.innerText = `Score: ${score + points}`
+}
+
+const isOverlapping = function (object1) {
+    return function(object2){ 
+        return (object1.leftSide() < object2.rightSide() &&
+        object1.rightSide() > object2.leftSide() &&
+        object1.topSide() < object2.bottomSide() &&
+        object1.bottomSide() > object2.topSide())
+    }
+}
+
+const userGameOver = (user, score, time) => {
+    fetch('http://localhost:3000/games', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            user_id: `${user.id}`,
+            score: `${score}`,
+            time: `${time}`
+        })
+    }).then((res) => res.json())
+    .then((res) => {
+        fetch(`http://localhost:3000/users/show/${res.user_id}`)
+        .then((res) => res.json())
+        .then((res) => {
+            document.body.style.background = "white"
+            displayUserHome(res)
+        })
+    })
+}
