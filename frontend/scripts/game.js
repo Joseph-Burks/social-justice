@@ -1,6 +1,8 @@
 const displayGame = (user) => {
     changingContainer.innerHTML = ''
     document.body.style.background = "url('gamesfx/img/background-blue.png')"
+    let home = document.getElementById('home')
+    home.setAttribute('class', 'nav-link disabled navbar-brand btn btn-dark')
 
     createTimer()
     let timer = document.getElementById('timer')
@@ -132,6 +134,7 @@ const displayGame = (user) => {
                 clearInterval(checkForContact)
                 clearInterval(clearLasers)
                 clearInterval(clearEnemies)
+                home.setAttribute('class', 'navbar-brand btn btn-dark')
                 
                 alert('Game Over')
                 

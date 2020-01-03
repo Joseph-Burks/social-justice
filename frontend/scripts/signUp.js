@@ -55,6 +55,12 @@ const displaySignUp = () => {
         }).then((res) => res.json())
         .then((res) => {
             document.body.style.background = "white"
+            let home = document.getElementById('home')
+            home.innerText = 'Dashboard'
+            home.addEventListener('click', () => {
+                document.body.style.background = "white"
+                displayUserHome(res)
+            })
             displayUserHome(res)
         })
     })
