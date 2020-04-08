@@ -97,23 +97,23 @@ const displayGame = (user) => {
             .forEach( enemy => {
                 score = parseInt(scoreboard.innerText.replace(/[^0-9.]/g, ""))
                 laser.destroy();
-                if(enemy.image.src != "file:///Users/flatironstudent/Desktop/Joseph/Module%203/social-justice/frontend/gamesfx/img/social-media-icons/myspace-icon-64.png"){
+                if(enemy.image.src != "gamesfx/img/social-media-icons/myspace-icon-64.png"){
                     enemy.destroy();
                     enemies = enemies.filter(e => e != enemy)
                 }
-                if(enemy.image.src == "file:///Users/flatironstudent/Desktop/Joseph/Module%203/social-justice/frontend/gamesfx/img/social-media-icons/facebook-icon-64.png"){
+                if(enemy.image.src == "gamesfx/img/social-media-icons/facebook-icon-64.png"){
                     updateScoreboard(score, 50)
                 }
-                if(enemy.image.src == "file:///Users/flatironstudent/Desktop/Joseph/Module%203/social-justice/frontend/gamesfx/img/social-media-icons/youtube-icon-64.png"){
+                if(enemy.image.src == "gamesfx/img/social-media-icons/youtube-icon-64.png"){
                     updateScoreboard(score, 40)
                 }
-                if(enemy.image.src == "file:///Users/flatironstudent/Desktop/Joseph/Module%203/social-justice/frontend/gamesfx/img/social-media-icons/instagram-icon-64.png"){
+                if(enemy.image.src == "gamesfx/img/social-media-icons/instagram-icon-64.png"){
                     updateScoreboard(score, 20)
                 }
-                if(enemy.image.src == "file:///Users/flatironstudent/Desktop/Joseph/Module%203/social-justice/frontend/gamesfx/img/social-media-icons/twitter-icon-64.png"){
+                if(enemy.image.src == "gamesfx/img/social-media-icons/twitter-icon-64.png"){
                      updateScoreboard(score, 10)
                 }
-                if(enemy.image.src == "file:///Users/flatironstudent/Desktop/Joseph/Module%203/social-justice/frontend/gamesfx/img/social-media-icons/snapchat-icon-64.png"){
+                if(enemy.image.src == "gamesfx/img/social-media-icons/snapchat-icon-64.png"){
                      updateScoreboard(score, 5)
                 }
             })            

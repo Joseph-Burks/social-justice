@@ -6,7 +6,7 @@ class Enemy extends GameObject{
         changingContainer.append(this.image)
         this.left = parseInt(x);
         this.bottom = parseInt(y);
-        this.speed = 2;
+        this.speed = 1;
     
         setInterval(() => this.fall(), 60 / 1000)
     }
